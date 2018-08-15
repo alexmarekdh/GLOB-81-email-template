@@ -108,21 +108,23 @@
                     </tr>
                     <tr>
                       <td style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; vertical-align: top;">
-                        <h2 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 21px; font-weight: bolder; margin: 0; Margin-bottom: 25px; margin-top: 30px;"> Global Product Email Template </h2>
-                        <p style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi Mike Smith,</p>
-                        <p style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">This is a template for Global Product emails. A nice paragraph should be here to describe what the email will show.</p>
+                        <h2 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 21px; font-weight: bolder; margin: 0; Margin-bottom: 25px; margin-top: 30px;"> {{brand}} - {{ds}} Data health report </h2>
+                        <p style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi there,</p>
+                        <p style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">This is a first try of automated emails with data health plots.
+                        A nice paragraph should be here to describe what the report will show.</p>
                         
                         <!-- Option with image and text full-width -->
+                        {% for details in image_details%}
 
-                        <h3 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 16px; font-weight: bolder; margin: 0; Margin-bottom: 15px; margin-top: 35px;">Sample Heading</h3>
-                        <p style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni a libero dolore amet natus dignissimos ab reprehenderit in recusandae.</p>
-                        
+                        <h3 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 16px; font-weight: bolder; margin: 0; Margin-bottom: 25px;">{{details['description']}}</h3>
                         <a href="https://images.deliveryhero.io/image/tech-blog/Delivery-Hero-HQ-9857.jpg" target="_blank" rel="noreferrer nofollow">
-                            <img style="max-width: 100%; width: 100%; margin-bottom: 25px;" src="https://images.deliveryhero.io/image/tech-blog/Delivery-Hero-HQ-9857.jpg" alt="I am here for a reason">
+                            <img style="max-width: 100%; width: 100%" src="https://images.deliveryhero.io/image/tech-blog/Delivery-Hero-HQ-9857.jpg" alt="I am here for a reason">
                         </a>
+                        {% endfor %}
 
                         <!-- Option with image left aligned -->
-                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box; margin-bottom: 25px;">
+                        {% for details in image_details%}
+                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
                             <tbody>
                                 <tr>
                                     <td style="width: 50%">
@@ -130,21 +132,21 @@
                                             <img style="max-width: 100%; width: 100%" src="https://images.deliveryhero.io/image/tech-blog/Delivery-Hero-HQ-9857.jpg" alt="I am here for a reason">
                                         </a>
                                     </td>
-                                    <td style="width: 50%; text-align: center; padding: 25px;"> 
-                                        <h3 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 16px; font-weight: bolder; margin: 0; Margin-bottom: 25px;">Sample Heading</h3>
-                                        <p style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni a libero dolore amet natus dignissimos ab reprehenderit in recusandae.</p>
+                                    <td style="width: 50%; text-align: center"> 
+                                        <h3 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 16px; font-weight: bolder; margin: 0; Margin-bottom: 25px;">{{details['description']}}</h3>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+                        {% endfor %}
 
                         <!-- Option with image right aligned -->
-                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box; margin-bottom: 25px;">
+                        {% for details in image_details%}
+                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
                             <tbody>
                                 <tr>
                                     <td style="width: 50%; text-align: center"> 
-                                        <h3 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 16px; font-weight: bolder; margin: 0; Margin-bottom: 25px;">Sample Heading</h3>
-                                        <p style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px; padding: 25px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni a libero dolore amet natus dignissimos ab reprehenderit in recusandae.</p>
+                                        <h3 style="color: #363D4F; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 16px; font-weight: bolder; margin: 0; Margin-bottom: 25px;">{{details['description']}}</h3>
                                     </td>
                                     <td style="width: 50%">
                                         <a href="https://images.deliveryhero.io/image/tech-blog/Delivery-Hero-HQ-9857.jpg" target="_blank" rel="noreferrer nofollow">
@@ -154,6 +156,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        {% endfor %}
 
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="text-align: center; border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
                           <tbody>
@@ -171,7 +174,7 @@
                           </tbody>
                         </table>
                         <p style="text-align: center; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; width: 60%; margin: 15px auto;">This is a really simple email template. Its sole purpose is to get the recipient to view data and click the button with no distractions.</p>
-                        <p style="text-align: center; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck playing with the template! Hope it works.</p>
+                        <p style="text-align: center; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck playing with it! Hope it works.</p>
                       </td>
                     </tr>
                   </table>
